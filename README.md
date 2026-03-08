@@ -74,7 +74,7 @@ Examples:
 | --- | --- | --- |
 | `swift-performance-engineering` | Swift and iOS performance discipline during code generation, modification, and review | Startup time, UI responsiveness, memory, concurrency, hot paths, lifecycle safety |
 
-See [swift-performance-engineering/README.md](/Users/aayushipandit/Desktop/Space/AgenticSkills/swift-performance-engineering/README.md) for the current skill.
+See [swift-performance-engineering/README.md] for the current skill.
 
 ## Design Principles
 
@@ -87,15 +87,7 @@ This repository favors skills that are:
 
 ## Adding More Skills
 
-This repo is intended to grow into a broader iOS-focused skill library. Planned categories include:
-
-- SwiftUI implementation guidance
-- UIKit modernization and interoperability
-- Swift concurrency and Swift 6 migration
-- iOS architecture and modularization
-- Performance, profiling, and diagnostics
-- Accessibility and quality gates
-- Testing and CI for Apple platform codebases
+This repo is intended to grow into a broader iOS-focused skill library.
 
 ## Inspiration
 
