@@ -88,11 +88,3 @@ This repository favors skills that are:
 ## Adding More Skills
 
 This repo is intended to grow into a broader iOS-focused skill library.
-
-## Inspiration
-
-This repository direction was informed by strong open skill examples from the community:
-
-- [twostraws/SwiftUI-Agent-Skill](https://github.com/twostraws/SwiftUI-Agent-Skill)
-- [AvdLee/Swift-Concurrency-Agent-Skill](https://github.com/AvdLee/Swift-Concurrency-Agent-Skill)
-- [AvdLee/SwiftUI-Agent-Skill](https://github.com/AvdLee/SwiftUI-Agent-Skill)
