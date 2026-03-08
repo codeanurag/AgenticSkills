@@ -1,0 +1,4 @@
+interface:
+  display_name: "Swift Performance Engineering"
+  short_description: "Generate and refine Swift code with performance discipline"
+  default_prompt: "Use $swift-performance-engineering while generating, editing, or reviewing Swift and iOS code so the implementation avoids performance bottlenecks in startup, UI latency, memory, and concurrency."
