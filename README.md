@@ -70,11 +70,11 @@ Examples:
 
 ## Currently Available Skills
 
-| Skill | Focus | Best Used For |
-| --- | --- | --- |
-| `swift-performance-engineering` | Swift and iOS performance discipline during code generation, modification, and review | Startup time, UI responsiveness, memory, concurrency, hot paths, lifecycle safety |
+| Skill | Focus | Best Used For | License |
+| --- | --- | --- | --- |
+| `swift-performance-engineering` | Swift and iOS performance discipline during code generation, modification, and review | Startup time, UI responsiveness, memory, concurrency, hot paths, lifecycle safety | MIT |
 
-See [swift-performance-engineering/README.md] for the current skill.
+See [swift-performance-engineering/README.md](./swift-performance-engineering/README.md) for the current skill.
 
 ## Design Principles
 
