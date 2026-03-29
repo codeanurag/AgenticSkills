@@ -94,7 +94,3 @@ The skill is written to be portable across agent tools, including:
 The Swift-performance-engineering Agent skill was originally created by Anurag Pandit. It is available under the MIT License, which permits commercial use, modification, distribution, and private use.
 
 See [LICENSE](/Users/aayushipandit/Desktop/Space/AgenticSkills/swift-performance-engineering/LICENSE).
-
-## Related Repository
-
-This skill lives inside the broader [AgenticSkills](/Users/aayushipandit/Desktop/Space/AgenticSkills/README.md) repository, which is intended to become a central iOS-focused skill library.
