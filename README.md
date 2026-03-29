@@ -1,90 +1,100 @@
-# AgenticSkills
+# Swift Performance Engineering
 
-Portable, reusable agent skills for iOS development.
+An agent skill for generating, modifying, and reviewing Swift and iOS code with performance as a first-class concern.
 
-This repository is a centralized library of agent skills that can be used across Codex, Claude Code, Cursor, Gemini, and other tools that support the Agent Skills format. The primary focus is iOS engineering: Swift, SwiftUI, UIKit, concurrency, performance, architecture, migration work, and related workflows.
+This skill is built for Swift, SwiftUI, UIKit, and general iOS app engineering. It helps agents make better implementation choices before bottlenecks land in the codebase, and it also supports focused review and profiling follow-up when performance issues already exist.
 
-## What Is A Skill?
+## What This Skill Covers
 
-A skill is a structured bundle of instructions and supporting references that helps an AI coding agent behave like a more specialized iOS engineer.
+- Object creation discipline
+- Resource lifecycle safety
+- Loop and hot-path efficiency
+- Data-structure fit
+- Algorithmic efficiency
+- Memory management
+- Concurrency and threading
+- UI rendering and responsiveness
+- Startup and first-frame time
+- Quality-gate alignment
 
-In practice, a skill usually contains:
+## When To Use This Skill
 
-- `SKILL.md`: the core instructions and trigger metadata
-- `agents/openai.yaml`: UI metadata for tools that surface skills directly
-- `references/`: optional deeper guidance the agent can load only when needed
-- `scripts/` or `assets/`: optional reusable tooling or files
+Use this skill whenever an agent is:
 
-Skills are designed to be:
-
-- Portable: usable across multiple agent tools
-- Reusable: invoked repeatedly across projects and teams
-- Focused: small enough to stay useful without wasting context
+- generating new Swift or iOS code
+- modifying or refactoring Swift, SwiftUI, or UIKit code
+- implementing latency-sensitive or launch-sensitive features
+- investigating UI hitches, startup issues, memory churn, or contention
+- performing a performance-focused code review
 
 ## Quick Start
 
-Clone the repo:
-
-```bash
-git clone https://github.com/<your-org-or-user>/AgenticSkills.git
-cd AgenticSkills
-```
-
-Then use a skill in your preferred agent tool.
-
-Examples:
-
-- Codex: `$swift-performance-engineering`
-- Claude Code: use the skill by name if installed in your skills environment
-- Natural language: `Use the swift performance engineering skill while implementing this SwiftUI feature`
-
-If your tool supports direct skill installation from a Git repository, point it at this repository and install the specific skill folder you want.
-
-## Repository Structure
+Invoke the skill explicitly in your agent:
 
 ```text
-AgenticSkills/
-├── README.md
-├── swift-performance-engineering/
-│   ├── README.md
-│   ├── SKILL.md
-│   ├── agents/
-│   │   └── openai.yaml
-│   └── references/
-│       ├── official-performance-sources.md
-│       └── review-checklist.md
+$swift-performance-engineering
 ```
 
-## How To Use A Skill
+Or use natural language:
 
-1. Pick the skill that matches the task.
-2. Invoke it explicitly by name, or use natural language that clearly calls for that specialization.
-3. Keep the skill active while generating, modifying, or reviewing code.
-4. Ask for focused output when needed, such as performance, architecture, accessibility, or migration risk.
+```text
+Use the swift performance engineering skill while implementing this SwiftUI feature.
+Use the swift performance engineering skill while refactoring this UIKit screen for lower launch cost.
+Use the swift performance engineering skill to review this code for memory, threading, and UI performance issues.
+```
 
-Examples:
+## What The Skill Contains
 
-- `Use $swift-performance-engineering while implementing this feed screen.`
-- `Use $swift-performance-engineering to refactor this UIKit screen for lower startup cost and less main-thread work.`
-- `Use $swift-performance-engineering to review this PR for UI latency, memory churn, and contention issues.`
+- [SKILL.md](/Users/aayushipandit/Desktop/Space/AgenticSkills/swift-performance-engineering/SKILL.md): trigger rules, workflow, build rules, and output expectations
+- [review-checklist.md](/Users/aayushipandit/Desktop/Space/AgenticSkills/swift-performance-engineering/references/review-checklist.md): build-time and review-time checklist
+- [official-performance-sources.md](/Users/aayushipandit/Desktop/Space/AgenticSkills/swift-performance-engineering/references/official-performance-sources.md): official Apple and Swift documentation index with direct links and search anchors
+- [openai.yaml](/Users/aayushipandit/Desktop/Space/AgenticSkills/swift-performance-engineering/agents/openai.yaml): UI metadata for compatible tools
 
-## Currently Available Skills
+## How It Works
 
-| Skill | Focus | Best Used For | License |
-| --- | --- | --- | --- |
-| `swift-performance-engineering` | Swift and iOS performance discipline during code generation, modification, and review | Startup time, UI responsiveness, memory, concurrency, hot paths, lifecycle safety | MIT |
+The skill is meant to stay active while code is being written, changed, or reviewed.
 
-See [swift-performance-engineering/README.md](./swift-performance-engineering/README.md) for the current skill.
+It pushes agents to:
 
-## Design Principles
+- avoid predictable performance regressions in the first implementation
+- choose better ownership, concurrency, and data-structure patterns
+- keep expensive work off the main thread when safe
+- justify recommendations with official Apple and Swift sources when needed
+- leave a clear verification path using profiling, benchmarks, or metrics
 
-This repository favors skills that are:
+## Official Grounding
 
-- Practical: optimize real implementation choices, not generic theory
-- Cross-agent: usable in Codex, Claude Code, Cursor, and similar tools
-- iOS-first: centered on Swift, SwiftUI, UIKit, Apple platform APIs, and Apple engineering constraints
-- Grounded: backed by official Apple and Swift documentation where appropriate
+This skill is not itself an official Apple document, but it is grounded in official sources. The reference index includes direct Apple Developer and Swift.org pages for launch time, SwiftUI performance, main-thread analysis, memory diagnostics, MetricKit, concurrency guidance, and language documentation.
 
-## Adding More Skills
+See [official-performance-sources.md](/Users/aayushipandit/Desktop/Space/AgenticSkills/swift-performance-engineering/references/official-performance-sources.md).
 
-This repo is intended to grow into a broader iOS-focused skill library.
+## Best Fit
+
+This skill is especially useful for:
+
+- feed screens, timelines, lists, and grids
+- app launch and first-frame optimization
+- async image loading and caching
+- state-heavy SwiftUI views
+- UIKit screens with layout or scrolling pressure
+- async/await adoption and contention analysis
+
+## Compatibility
+
+The skill is written to be portable across agent tools, including:
+
+- Codex
+- Claude Code
+- Cursor
+- Gemini
+- other tools that support the Agent Skills format
+
+## License
+
+The Swift-performance-engineering Agent skill was originally created by Anurag Pandit. It is available under the MIT License, which permits commercial use, modification, distribution, and private use.
+
+See [LICENSE](/Users/aayushipandit/Desktop/Space/AgenticSkills/swift-performance-engineering/LICENSE).
+
+## Related Repository
+
+This skill lives inside the broader [AgenticSkills](/Users/aayushipandit/Desktop/Space/AgenticSkills/README.md) repository, which is intended to become a central iOS-focused skill library.
